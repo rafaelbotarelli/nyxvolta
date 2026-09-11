@@ -27,7 +27,9 @@ body {
 
 header img {
     width: 150px;
-    height: 150px;
+    height: auto;
+    max-width: 100%;
+    aspect-ratio: 1;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid #9d4edd;
@@ -35,7 +37,8 @@ header img {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: clamp(26px, 7vw, 36px);
+    margin: 15px 0 5px;
     font-weight: 700;
     letter-spacing: 3px;
     
@@ -60,8 +63,11 @@ header p {
 .estatisticas {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: clamp(20px, 8vw, 50px);
     margin-bottom: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 0;
 }
 
 .estatisticas div {
@@ -111,6 +117,8 @@ main {
 
 .informacoes {
     flex: 1;
+    width: 100%;
+    min-width: 0;
 }
 
 .informacoes span{
@@ -142,6 +150,8 @@ main {
     border-radius: 12px;
     padding: 15px;
     transition: 0.3s;
+    width: 100%;
+    min-width: 0;
 }
 
 .plataforma:hover {
@@ -220,4 +230,42 @@ footer {
     color: #777;
     font-size: 12px;
     font-weight: 400;
+}
+@media (max-width: 600px){
+    body{
+        padding: 25px 12px;
+    }
+    header img{
+        width: 125px;
+        height: 125px;
+    }
+    h1{
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+    header p{
+        font-size: 14px;
+    }
+    .estatisticas{
+        gap: 25px;
+    }
+    .lancamento{
+        padding: 12px;
+    }
+    .botao-play{
+        width: 42px;
+        height: 42px;
+        margin-right: 10px;
+    }
+    .informacoes h3{
+        font-size: 15px;
+    }
+    .plataforma{
+        padding: 12px;
+    }
+    .icone{
+        font-size: 22px;
+        width: 38px;
+        margin-right: 8px;
+    }
 }
